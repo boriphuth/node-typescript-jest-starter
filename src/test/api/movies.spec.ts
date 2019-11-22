@@ -14,4 +14,16 @@ describe('Movies API', () => {
 
     expect(movie).toEqual(movieData)
   })
+
+  it('should findMany moview', () => {
+    const movieData: object = {
+      name: 'Pirates of the caribbean',
+      rating: 8.5
+    }
+
+    const movie: object = moviesApi.create(movieData)
+    const m = moviesApi.findMany()
+
+    expect(m.length).toEqual(2)
+  })
 })
